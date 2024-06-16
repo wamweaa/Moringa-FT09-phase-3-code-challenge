@@ -5,7 +5,7 @@ from models.magazine import Magazine
 
 class TestModels(unittest.TestCase):
     def test_author_creation(self):
-        author = Author(1, "John Doe")
+        author = Author("John Doe")  # Remove the ID argument
         self.assertEqual(author.name, "John Doe")
 
     def test_article_creation(self):
@@ -13,7 +13,7 @@ class TestModels(unittest.TestCase):
         self.assertEqual(article.title, "Test Title")
 
     def test_magazine_creation(self):
-        magazine = Magazine(1, "Tech Weekly")
+        magazine = Magazine(1, "Tech Weekly", "Technology")  # Add the missing category argument
         self.assertEqual(magazine.name, "Tech Weekly")
 
 if __name__ == "__main__":
